@@ -77,7 +77,7 @@
         <div class="collapse-inner">
             <ul class="list-unstyled ms-4">
                 <li>
-                    <a class="collapse-item d-flex align-items-center">
+                    <a class="collapse-item d-flex align-items-center" href="{{ route('landingpage.banner') }}">
                         <i class="fas fa-fw fa-calendar-day me-2"></i>Stream Header
                     </a>
                 </li>

@@ -26,9 +26,6 @@ class ProcessEmail implements ShouldQueue
 {
     // Send email to the specified recipient
     Mail::to($this->emailData['recipient'])->send(new YourMailable($this->emailData));
-
-    // Optional: Send a confirmation email to the user if needed
-    // Mail::to($this->emailData['user_email'])->send(new YourConfirmationMailable($this->emailData));
 }
 
 }

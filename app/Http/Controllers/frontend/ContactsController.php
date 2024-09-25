@@ -6,6 +6,7 @@ namespace App\Http\Controllers\frontend;
 use App\Jobs\ProcessEmail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class ContactsController extends Controller
 {
@@ -42,11 +43,14 @@ class ContactsController extends Controller
 
         // Dispatch the job
         try {
-            ProcessEmail::dispatch($emailData);
+            $users = User::all();
+            foreach ($users as $key => $user) {
+
+                ProcessEmail::dispatch($user->email);
+            }
             return redirect()->back()->with('success', 'Thank you. Your message has been sent.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to send message: ' . $e->getMessage());
         }
     }
-
 }

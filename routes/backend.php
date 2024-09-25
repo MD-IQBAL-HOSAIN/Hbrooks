@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\CMS\landingPage\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\dashboard\DashboardController;
 use App\Http\Controllers\backend\CMS\upcomingImage\UpcommingAlbumSliderImageController;
@@ -17,5 +18,19 @@ Route::controller(UpcommingAlbumController::class)->group(function () {
     Route::post('upcomming/album/store', 'store')->name('upcomming.album.store');
     Route::delete('upcomming/album/delete/{id}', 'destroy')->name('upcomming.album.delete');
 });
+
+
+//Route for landing page
+Route::controller(LandingPageController::class)->group(function () {
+    Route::get('landingpage/banner', 'banner')->name('landingpage.banner');
+    Route::get('landingpage/banner/update', 'bannerUpdate')->name('landingpage.banner.update');
+});
+
+
+
+
+
+
+
 
 // backend route end
