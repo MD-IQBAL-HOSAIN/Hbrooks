@@ -8,9 +8,9 @@
     <section>
         <div class="container">
             <div class="hero-text-container">
-                <h1>Upcoming Album Name</h1>
-                <p class="">26 july 2024 || Location, 23940, Dhaka || 12:30 PM</p>
-            </div>
+                <h1>{{ $CMS->title ?? 'Upcoming Album Name' }}</h1>
+                <p class="">{{ date('d M Y', strtotime($CMS->created_at)) }} || Location, 23940, Dhaka || {{ date('h:i A', strtotime($CMS->created_at)) }}</p>
+             </div>
             <!-- carousel -->
             <div class="carousel-wrapper">
                 <div
@@ -111,8 +111,8 @@
               class="carousel slide carousel-container"
               data-bs-ride="carousel"
             >
-            
-            
+
+
             <div class="carousel-indicators carousel-btn-container">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active carousel-btn" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="carousel-btn"  aria-label="Slide 2"></button>
@@ -186,7 +186,7 @@
                     </p>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div> -->

@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\CMS;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TemplateController extends Controller
 {
      public function index()
     {
-        return view('frontend.layout.home');
-        // return view('welcome');
+        $CMS = CMS::find(1);
+        // dd($CMS);
+        return view('frontend.layout.home', compact('CMS'));
+
     }
 }

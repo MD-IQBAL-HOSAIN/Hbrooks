@@ -23,7 +23,7 @@ Route::controller(UpcommingAlbumController::class)->group(function () {
 //Route for landing page
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('landingpage/banner', 'banner')->name('landingpage.banner');
-    Route::get('landingpage/banner/update', 'bannerUpdate')->name('landingpage.banner.update');
+    Route::match(['post', 'put'], 'landingpage/banner/update/{id}', 'bannerUpdate')->name('landingpage.banner.update');
 });
 
 

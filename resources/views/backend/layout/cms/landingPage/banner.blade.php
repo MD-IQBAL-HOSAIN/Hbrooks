@@ -12,22 +12,29 @@
 @endpush
 
 @section('main')
-    <div class="content-wrapper">
+    <div class="container mt-4 content-wrapper">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Banner Section</h4>
+                        <h2 class="text-center text-2xl"><strong>Banner Section</strong></h2> <hr>
                         <div class="mt-4">
-                            <form action="{{ route('landingpage.banner.update') }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="{{ route('landingpage.banner.update', 1) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
+                                <!-- Remove the PUT method directive -->
                                 <input type="hidden" name="id" value="1">
 
                                 <div class="form-group row mb-3">
                                     <div class="col">
-                                        <label class="form-lable">Description</label>
+                                        <label class="form-lable"><strong>Title</strong></label>
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" value="{{ $data[0]->title }}">
+                                        @error('title')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+
+                                        <label class="form-lable"><strong>Description</strong></label>
                                         <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description">{{ $data[0]->description }}</textarea>
                                         @error('description')
                                             <span class="invalid-feedback" role="alert">
@@ -36,8 +43,9 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                                <button type="submit" class="btn btn-primary me-2">Update</button>
                             </form>
+
                         </div>
                     </div>
                 </div>

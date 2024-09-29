@@ -21,8 +21,7 @@
 @endpush
 
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: teal">
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('adminDashboard') }}">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -76,8 +75,8 @@
     <div id="collapseCmss" class="collapse" aria-labelledby="headingCms" data-bs-parent="#accordionSidebar">
         <div class="collapse-inner">
             <ul class="list-unstyled ms-4">
-                <li>
-                    <a class="collapse-item d-flex align-items-center" href="{{ route('landingpage.banner') }}">
+                <li class="menu-item {{ Request::routeIs('landingpage.banner') ? 'active' : '' }}">
+                    <a class="collapse-item d-flex align-items-center"  href="{{ route('landingpage.banner') }}">
                         <i class="fas fa-fw fa-calendar-day me-2"></i>Stream Header
                     </a>
                 </li>

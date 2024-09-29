@@ -20,59 +20,20 @@ class LandingPageController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function bannerUpdate(Request $request)
+    public function bannerUpdate(Request $request, string $id)
     {
         $data = CMS::find($request->id);
 
 
         $updated = $data->update([
             'description' => $request->description,
+            'title' => $request->title,
         ]);
 
         if ($updated) {
-            return redirect()->back()->with('t-success', 'Data Updated Successfully');
+            return redirect()->back()->with('success', 'Data Updated Successfully');
         } else {
-            return redirect()->back()->with('t-error', 'Data update failed!');
+            return redirect()->back()->with('error', 'Data update failed!');
         }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
