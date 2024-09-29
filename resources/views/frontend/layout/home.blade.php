@@ -8,8 +8,8 @@
     <section>
         <div class="container">
             <div class="hero-text-container">
-                <h1>{{ $CMS[0]->title ?? 'Upcoming Album Name' }}</h1>
-                <p class="">{{ date('d M Y', strtotime($CMS[0]->created_at)) }} || Location, 23940, Dhaka || {{ date('h:i A', strtotime($CMS[0]->created_at)) }}</p>
+                <h1>{!! $CMS[0]->title ?? 'Upcoming Album Name' !!}</h1>
+                <p class="">{!! date('d M Y', strtotime($CMS[0]->created_at)) !!} || Location, 23940, Dhaka || {!! date('h:i A', strtotime($CMS[0]->created_at)) !!}</p>
              </div>
             <!-- carousel -->
             <div class="carousel-wrapper">
@@ -251,11 +251,11 @@
             <div class="biography-wrapper d-flex gap-3">
                 <div class="flex-grow-1 left-wrapper">
                     <div class="left">
-                        <h3>{{$CMS[1]->sub_title ?? 'Biography'}}</h3>
-                        <h2>{{ $CMS[1]->title ?? 'Jean Renard' }}</h2>
+                        <h3>{!! $CMS[1]->sub_title ?? 'Biography'!!}</h3>
+                        <h2>{!! $CMS[1]->title ?? 'Jean Renard' !!}</h2>
                     </div>
                     <div class="paragraph">
-                        {{ $CMS[1]->description}}
+                        {!! $CMS[1]->description !!}
                     </div>
                     <div class="d-flex button-container">
                         <a href="biography.html" class="d-flex gap-3 align-items-center">
