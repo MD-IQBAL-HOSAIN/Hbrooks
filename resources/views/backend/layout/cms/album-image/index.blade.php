@@ -8,6 +8,10 @@
 @endpush
 
 @section('main')
+ <!-- Topbar -->
+ @include('backend.partials.topbar')
+ <!-- End of Topbar -->
+ 
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">

@@ -15,6 +15,7 @@
 </head>
 
 <body id="page-top">
+    {{-- @include('backend.partials.topbar') --}}
 
     <!-- Page Wrapper -->
     <div id="wrapper">

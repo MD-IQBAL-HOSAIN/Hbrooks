@@ -12,6 +12,11 @@
 @endpush
 
 @section('main')
+ <!-- Topbar -->
+ @include('backend.partials.topbar')
+ <!-- End of Topbar -->
+
+ <!-- Main Content -->
     <div class="container mt-4 content-wrapper">
         <div class="row">
             <div class="col-sm-12">
@@ -19,10 +24,9 @@
                     <div class="card-body">
                         <h2 class="text-center text-2xl"><strong>Banner Section</strong></h2> <hr>
                         <div class="mt-4">
-                            <form action="{{ route('landingpage.banner.update', 1) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('landingpage.banner.update', $data[0]->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <!-- Remove the PUT method directive -->
-                                <input type="hidden" name="id" value="1">
+                                <input type="hidden" name="id" value="{{ $data[0]->id }}">
 
                                 <div class="form-group row mb-3">
                                     <div class="col">

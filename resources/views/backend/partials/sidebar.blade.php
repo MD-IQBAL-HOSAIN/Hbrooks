@@ -80,8 +80,8 @@
                         <i class="fas fa-fw fa-calendar-day me-2"></i>Stream Header
                     </a>
                 </li>
-                <li>
-                    <a class="collapse-item d-flex align-items-center">
+                <li class="menu-item {{ Request::routeIs('landingpage.biography') ? 'active' : '' }} ">
+                    <a class="collapse-item d-flex align-items-center"  href="{{ route('landingpage.biography') }}">
                         <i class="fas fa-fw fa-calendar-day me-2"></i>Biography
                     </a>
                 </li>

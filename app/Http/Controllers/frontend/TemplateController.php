@@ -10,7 +10,7 @@ class TemplateController extends Controller
 {
      public function index()
     {
-        $CMS = CMS::find(1);
+        $CMS = CMS::all();
         // dd($CMS);
         return view('frontend.layout.home', compact('CMS'));
 

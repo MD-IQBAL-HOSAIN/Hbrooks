@@ -8,8 +8,8 @@
     <section>
         <div class="container">
             <div class="hero-text-container">
-                <h1>{{ $CMS->title ?? 'Upcoming Album Name' }}</h1>
-                <p class="">{{ date('d M Y', strtotime($CMS->created_at)) }} || Location, 23940, Dhaka || {{ date('h:i A', strtotime($CMS->created_at)) }}</p>
+                <h1>{{ $CMS[0]->title ?? 'Upcoming Album Name' }}</h1>
+                <p class="">{{ date('d M Y', strtotime($CMS[0]->created_at)) }} || Location, 23940, Dhaka || {{ date('h:i A', strtotime($CMS[0]->created_at)) }}</p>
              </div>
             <!-- carousel -->
             <div class="carousel-wrapper">
@@ -251,31 +251,11 @@
             <div class="biography-wrapper d-flex gap-3">
                 <div class="flex-grow-1 left-wrapper">
                     <div class="left">
-                        <h3>BIOGRAPHY</h3>
-                        <h2>Jean Renard</h2>
+                        <h3>{{$CMS[1]->sub_title ?? 'Biography'}}</h3>
+                        <h2>{{ $CMS[1]->title ?? 'Jean Renard' }}</h2>
                     </div>
                     <div class="paragraph">
-                        <p class="p1">
-                            Jean Renard, a prolific composer and songwriter, embarked on
-                            his musical journey in 1958 when he joined SACEM. Teaming up
-                            with notable figures like Rolf Marbot and Pierre Delanoë,
-                            Renard's career took off with hits like "À la gare
-                            Saint-Lazare" and "Le premier bonheur du jour."
-                        </p>
-                        <p class="p2">
-                            His compositions transcended borders with international
-                            successes such as "Losing You" sung by Brenda Lee. Renard's
-                            collaboration with Sylvie Vartan marked a significant
-                            milestone in his career, producing hits like "La Maritza" and
-                            "Irrésistiblement." In 1969, Renard achieved legendary status
-                            by composing "Que je t'aime" for Johnny Hallyday. Renard's
-                            talent extended beyond composing, as he ventured into
-                            production, stage direction, and even musicothérapie.
-                        </p>
-                        <p>
-                            His legacy lives on through timeless classics and his
-                            continuous dedication to the art of music.
-                        </p>
+                        {{ $CMS[1]->description}}
                     </div>
                     <div class="d-flex button-container">
                         <a href="biography.html" class="d-flex gap-3 align-items-center">
@@ -328,7 +308,7 @@
                         <p>A Legacy of Melodic Mastery</p>
                     </div>
                     <div>
-                        <img src="frontend/assets/images/biography-1.jpeg" alt="" />
+                        <img src="{{$CMS[1]->image_url ?? 'frontend/assets/images/biography.png'}}" alt="" />
                     </div>
                     <div class="d-flex right-bottom justify-content-between">
                         <div class="d-flex title-bottom flex-column">

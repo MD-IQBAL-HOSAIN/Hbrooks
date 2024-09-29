@@ -24,6 +24,10 @@ Route::controller(UpcommingAlbumController::class)->group(function () {
 Route::controller(LandingPageController::class)->group(function () {
     Route::get('landingpage/banner', 'banner')->name('landingpage.banner');
     Route::match(['post', 'put'], 'landingpage/banner/update/{id}', 'bannerUpdate')->name('landingpage.banner.update');
+
+    //biography cms
+    Route::get('landingpage/biography', 'biography')->name('landingpage.biography');
+    Route::match(['post', 'put'], 'landingpage/biography/update/{id}', 'biographyUpdate')->name('landingpage.banner.update');
 });
 
 

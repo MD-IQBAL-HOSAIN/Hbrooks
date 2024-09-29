@@ -10,6 +10,11 @@
 @endpush
 
 @section('main')
+ <!-- Topbar -->
+ @include('backend.partials.topbar')
+ <!-- End of Topbar -->
+
+ {{-- main area starts --}}
     <div class="container content-wrapper mt-3" style="width: 60%;">
         <div class="row">
             <div class="col-sm-12">

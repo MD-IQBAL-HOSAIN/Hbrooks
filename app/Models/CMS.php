@@ -9,4 +9,9 @@ class CMS extends Model
 {
     use HasFactory;
     protected $guarded =[];
+
+    public function getImageUrlAttribute($value) : string
+    {
+        return asset('storage/' . $value);
+    }
 }
